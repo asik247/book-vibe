@@ -7,6 +7,7 @@ import Books from "../Components/Books/Books";
 const router = createBrowserRouter([
     {
         path: "/",
+        loader:()=>fetch('https://jsonplaceholder.typicode.com/users'),
         Component: Root,
         children: [
             { index: true, Component: Home },
