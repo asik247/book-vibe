@@ -1,9 +1,16 @@
-import React from 'react';
-import { useLoaderData,  useNavigate,  useParams } from 'react-router';
+// import React, { useState } from 'react';
+import { Navigate, useLoaderData,  useNavigate,  useParams } from 'react-router';
+import { addToStoredDB } from '../../Utlity/Utlity';
 
 const DetailsPage = () => {
     const book = useLoaderData();
     const { id } = useParams();
+    
+    // wishList code here;
+    const handleWishList = (id)=>{
+        console.log(id);
+        addToStoredDB(id)
+    }
 
     const {
         bookName,
@@ -20,6 +27,9 @@ const DetailsPage = () => {
 
     // navgation code start here;
     const navigate = useNavigate()
+
+    // derected home;
+    // const [visitedHome,setVisitedHome] = useState(false)
 
     return (
         <div className="max-w-6xl mx-auto p-6">
@@ -90,12 +100,21 @@ const DetailsPage = () => {
                         {review}
                     </p>
 
-                    <button className="btn btn-success mt-4">
-                        Add to Read List
+                    <button onClick={()=>handleWishList(id)} className="btn btn-success mt-4">
+                        Add to Wish List
                     </button>
+
+
+
                     <button onClick={()=>navigate(-1)} className='btn btn-success ml-4'>Back Home</button>
+                    {/* decrected home */}
+                    {/* <button onClick={()=>setVisitedHome(true)} className='btn btn-success ml-4'>Home</button> */}
 
                 </div>
+                {/* decreacted home  */}
+                {/* {
+                    visitedHome && <Navigate to={'/'}></Navigate>
+                } */}
             </div>
 
         </div>

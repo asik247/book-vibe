@@ -20,9 +20,9 @@ const router = createBrowserRouter([
                 loader:async ({params})=>{
                     const res = await fetch('/promise.json')
                     const data =await res.json();
-                    console.log(data);
+                    // console.log(data);
                     const singleBook = data.find(book=>book.bookId === parseInt(params.id));
-                    console.log(singleBook);
+                    // console.log(singleBook);
                     return singleBook
                 },
                 Component:DetailsPage
