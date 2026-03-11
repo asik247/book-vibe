@@ -6,47 +6,132 @@ import { getStoredBook } from '../../Utlity/Utlity';
 import WishListBook from '../WishListBook/WishListBook';
 
 const ReadList = () => {
-    const [readList, setReadList] = useState([])
-    const data = useLoaderData();
-    console.log(data);
 
+    const [readList, setReadList] = useState([]);
+    const [sort, setSort] = useState("");
+
+    const data = useLoaderData();
 
     useEffect(() => {
         const storedData = getStoredBook();
-        console.log(storedData);
-        const myReadList = data.filter(book => storedData.includes(book.bookId));
+
+        const myReadList = data.filter(book =>
+            storedData.includes(book.bookId)
+        );
+
         setReadList(myReadList);
-    }, [])
+
+    }, [data]);
 
 
+    // Sort Function
+    const handleSort = (type) => {
+
+        setSort(type);
+
+        if (type === 'pages') {
+
+            const sortedData = [...readList].sort(
+                (a, b) => b.totalPages - a.totalPages
+            );
+
+            setReadList(sortedData);
+        }
+
+        if (type === 'rating') {
+
+            const ratingData = [...readList].sort(
+                (a, b) => b.rating - a.rating
+            );
+
+            setReadList(ratingData);
+        }
+    }
 
 
     return (
-        <div>
-            {/* sorted functionality */}
-            <details className="dropdown mt-10">
-                <summary className="btn m-1">open or close</summary>
-                <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                </ul>
-            </details>
+        <div className='max-w-7xl mx-auto'>
+
+            {/* Sort Section */}
+
+            <div className="flex justify-center my-10">
+
+                <details className="dropdown">
+
+                    <summary className="btn btn-success text-white px-8">
+                        Sort By : {sort ? sort : "Select"}
+                    </summary>
+
+                    <ul className="menu dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+
+                        <li>
+                            <button onClick={() => handleSort("pages")}>
+                                Sort by Pages
+                            </button>
+                        </li>
+
+                        <li>
+                            <button onClick={() => handleSort("rating")}>
+                                Sort by Rating
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </details>
+
+            </div>
+
+
+            {/* Tabs */}
+
             <Tabs>
+
                 <TabList>
                     <Tab>Read List Book</Tab>
                     <Tab>My Wish List</Tab>
                 </TabList>
 
+
+                {/* Read List */}
+
                 <TabPanel>
-                    <h2>Book i read {readList.length}</h2>
-                    {
-                        readList.map(b=><WishListBook bk={b}></WishListBook>)
-                    }
+
+                    <h2 className="text-2xl font-bold mb-6 text-center">
+                        Book I read {readList.length}
+                    </h2>
+
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        {
+                            readList.map(book =>
+
+                                <WishListBook
+                                    key={book.bookId}
+                                    bk={book}
+                                />
+
+                            )
+                        }
+
+                    </div>
+
                 </TabPanel>
+
+
+                {/* Wish List */}
+
                 <TabPanel>
-                    <h2>All Wish list book</h2>
+
+                    <h2 className="text-2xl font-bold text-center">
+                        All Wish List Book
+                    </h2>
+
                 </TabPanel>
+
             </Tabs>
+
         </div>
     );
 };
