@@ -6,13 +6,13 @@ import WishListBook from '../WishListBook/WishListBook';
 const WishListBooks = () => {
     const [book, setBook] = useState([])
     const allBooks = useLoaderData();
-    console.log(allBooks);
+    // console.log(allBooks);
 
 
 
     // handle remove;
     const handleRemove = (id) => {
-        console.log(id);
+        // console.log(id);
         const reminingBook = book.filter(b=>b.bookId !== id)
         setBook(reminingBook)
         removeDetails(id)
@@ -22,10 +22,10 @@ const WishListBooks = () => {
     // get array DB;
     useEffect(() => {
         const getAllArrayDB = getStoredBook();
-        console.log(getAllArrayDB);
+        // console.log(getAllArrayDB);
         const matchId = [];
         for (const item of getAllArrayDB) {
-            console.log(item);
+            // console.log(item);
             const singleId = allBooks.find(book => book.bookId === item);
             if (singleId) {
                 matchId.push(singleId)
@@ -38,7 +38,7 @@ const WishListBooks = () => {
 
     return (
         <div>
-            <h1>All WishList ({book.length})</h1>
+            <h1 className='font-bold text-2xl text-center mt-5'>All WishList ({book.length})</h1>
 
             <div >
                 {

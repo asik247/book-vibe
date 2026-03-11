@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router';
 const Hero = () => {
     // loadder data ;
     const allBooks = useLoaderData()
-    console.log(allBooks);
+    // console.log(allBooks);
 
     return (
         <div>

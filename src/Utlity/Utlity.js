@@ -34,6 +34,7 @@ const addToStoredDB = (id)=>{
 // Remove code;
 
 const removeDetails = (id)=>{
+    // console.log(id);
     const storedBookData = getStoredBook();
     const reminingBook = storedBookData.filter(book=>book!==id);
     saveStoredDB(reminingBook)

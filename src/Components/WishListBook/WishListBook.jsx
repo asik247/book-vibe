@@ -96,7 +96,7 @@ const WishListBook = ({ bk,handleRemove }) => {
 
 
 
-                    <button onClick={()=>handleRemove(bookId)} className='btn btn-success ml-4'>Home</button>
+                    <button onClick={()=>handleRemove(bookId)} className='btn btn-success ml-4'>Remove</button>
                     {/* decrected home */}
                     {/* <button onClick={()=>setVisitedHome(true)} className='btn btn-success ml-4'>Home</button> */}
 
