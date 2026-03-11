@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData,  useNavigate,  useParams } from 'react-router';
 
 const DetailsPage = () => {
     const book = useLoaderData();
@@ -17,6 +17,9 @@ const DetailsPage = () => {
         publisher,
         yearOfPublishing
     } = book;
+
+    // navgation code start here;
+    const navigate = useNavigate()
 
     return (
         <div className="max-w-6xl mx-auto p-6">
@@ -90,6 +93,7 @@ const DetailsPage = () => {
                     <button className="btn btn-success mt-4">
                         Add to Read List
                     </button>
+                    <button onClick={()=>navigate(-1)} className='btn btn-success ml-4'>Back Home</button>
 
                 </div>
             </div>

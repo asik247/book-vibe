@@ -75,7 +75,7 @@ const Books = ({ book }) => {
                     </div>
                     {/* Details btn here  */}
                     <NavLink to={`/details/${bookId}`}>
-                        <div className='mt-4 mx-auto'>
+                        <div className='mt-4 flex justify-center items-center'>
                             <button className='btn btn-primary'>View Details</button>
                         </div>
                     </NavLink>
