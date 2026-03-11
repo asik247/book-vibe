@@ -1,7 +1,13 @@
-import React from 'react';
+// import { use } from "react";
 
-const Books = ({user}) => {
-    console.log(user);
+
+
+const Books = () => {
+    // console.log(users);
+//   console.log(promiseData);
+//   const allUsers = use(promiseData);
+//   console.log(allUsers);
+    // console.log(data);
     return (
         <div>
             <h1>All Booksssssssssss</h1>
