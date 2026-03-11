@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredBook } from '../../Utlity/Utlity';
+import WishListBook from '../WishListBook/WishListBook';
 
 const ReadList = () => {
     const [readList, setReadList] = useState([])
@@ -23,7 +24,7 @@ const ReadList = () => {
     return (
         <div>
             {/* sorted functionality */}
-            <details className="dropdown">
+            <details className="dropdown mt-10">
                 <summary className="btn m-1">open or close</summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                     <li><a>Item 1</a></li>
@@ -38,6 +39,9 @@ const ReadList = () => {
 
                 <TabPanel>
                     <h2>Book i read {readList.length}</h2>
+                    {
+                        readList.map(b=><WishListBook bk={b}></WishListBook>)
+                    }
                 </TabPanel>
                 <TabPanel>
                     <h2>All Wish list book</h2>
