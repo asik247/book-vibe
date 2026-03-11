@@ -1,9 +1,13 @@
-import React from 'react';
+// import React, { useState } from 'react';
+import { Navigate } from 'react-router';
+// import { removeDetails } from '../../Utlity/Utlity';
 
-const WishListBook = ({ bk }) => {
+const WishListBook = ({ bk,handleRemove }) => {
+    // const [vistiHome,setVisitHome] = useState(false)
 
     const {
         bookName,
+        bookId,
         author,
         review,
         image,
@@ -14,6 +18,8 @@ const WishListBook = ({ bk }) => {
         publisher,
         yearOfPublishing
     } = bk;
+
+  
 
     return (
         <div className="max-w-6xl mx-auto p-6">
@@ -90,14 +96,14 @@ const WishListBook = ({ bk }) => {
 
 
 
-                    <button className='btn btn-success ml-4'>Back Home</button>
+                    <button onClick={()=>handleRemove(bookId)} className='btn btn-success ml-4'>Home</button>
                     {/* decrected home */}
                     {/* <button onClick={()=>setVisitedHome(true)} className='btn btn-success ml-4'>Home</button> */}
 
                 </div>
                 {/* decreacted home  */}
                 {/* {
-                    visitedHome && <Navigate to={'/'}></Navigate>
+                    vistiHome && <Navigate to={'/'}></Navigate>
                 } */}
             </div>
 

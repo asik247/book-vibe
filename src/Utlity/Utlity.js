@@ -9,7 +9,11 @@ const getStoredBook = ()=>{
     }
 }
 
-
+// saveLocalStored ;
+const saveStoredDB = (itme) =>{
+    const data = JSON.stringify(itme);
+    localStorage.setItem("readList",data)
+}
 
 // Add to stored DB;
 const addToStoredDB = (id)=>{
@@ -19,9 +23,19 @@ const addToStoredDB = (id)=>{
     }else{
         storedBookData.push(id);
         // console.log(storedBookData);
-        const data = JSON.stringify(storedBookData);
-        localStorage.setItem("readList",data)
+        // const data = JSON.stringify(storedBookData);
+        // localStorage.setItem("readList",data)
+        saveStoredDB(storedBookData)
     }
 
 }
-export {addToStoredDB,getStoredBook}
+
+
+// Remove code;
+
+const removeDetails = (id)=>{
+    const storedBookData = getStoredBook();
+    const reminingBook = storedBookData.filter(book=>book!==id);
+    saveStoredDB(reminingBook)
+}
+export {addToStoredDB,getStoredBook,removeDetails}

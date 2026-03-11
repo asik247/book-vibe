@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStoredBook } from '../../Utlity/Utlity';
+import { getStoredBook, removeDetails } from '../../Utlity/Utlity';
 import { useLoaderData } from 'react-router';
 import WishListBook from '../WishListBook/WishListBook';
 
@@ -7,6 +7,17 @@ const WishListBooks = () => {
     const [book, setBook] = useState([])
     const allBooks = useLoaderData();
     console.log(allBooks);
+
+
+
+    // handle remove;
+    const handleRemove = (id) => {
+        console.log(id);
+        const reminingBook = book.filter(b=>b.bookId !== id)
+        setBook(reminingBook)
+        removeDetails(id)
+
+    }
 
     // get array DB;
     useEffect(() => {
@@ -22,13 +33,16 @@ const WishListBooks = () => {
         }
         setBook(matchId)
     }, [])
+
+
+
     return (
         <div>
-            <h1>All wihs list ami pore pore nio akhn save kroejlkfaksfhklfafh afhhflffafasfaf</h1>
+            <h1>All WishList ({book.length})</h1>
 
             <div >
                 {
-                    book.map(bk => <WishListBook bk={bk}></WishListBook>)
+                    book.map(bk => <WishListBook handleRemove={handleRemove} key={bk.bookId} bk={bk}></WishListBook>)
                 }
             </div>
         </div>
