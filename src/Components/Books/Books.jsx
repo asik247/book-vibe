@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
-const Books = ({book}) => {
-    console.log(book);
+const Books = ({ book }) => {
+    // console.log(book);
     const {
         bookId,
         bookName,
@@ -13,6 +14,11 @@ const Books = ({book}) => {
         totalPages,
         yearOfPublishing
     } = book;
+
+
+
+    // use params code start here now;
+   
     return (
         <div>
             <div className="card bg-base-100 shadow-xl p-4">
@@ -67,6 +73,12 @@ const Books = ({book}) => {
                         <p>{totalPages} Pages</p>
                         <p>{yearOfPublishing}</p>
                     </div>
+                    {/* Details btn here  */}
+                    <NavLink to={`/details/${bookId}`}>
+                        <div className='mt-4 mx-auto'>
+                            <button className='btn btn-primary'>View Details</button>
+                        </div>
+                    </NavLink>
 
                 </div>
             </div>

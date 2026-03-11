@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router';
 const Hero = () => {
     // loadder data ;
     const allBooks = useLoaderData()
-    console.log(allBooks);
+    // console.log(allBooks);
 
     return (
         <div>
@@ -46,7 +46,7 @@ const Hero = () => {
                 <h1 className='font-bold text-2xl text-center mt-5 mb-4'>Books</h1>
                 <div className='grid md:grid-cols-3 gap-4'>
                     {
-                        allBooks.map(book => <Books key={book.id} book={book}></Books>)
+                        allBooks.map(book => <Books key={book.bookId} book={book}></Books>)
                     }
                 </div>
             </div>
