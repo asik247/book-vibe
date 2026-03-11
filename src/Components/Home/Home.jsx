@@ -1,7 +1,10 @@
 // import React, { Suspense } from 'react';
 // import { useLoaderData } from 'react-router';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Books from '../Books/Books';
+import { Suspense } from 'react';
+// import axios from 'axios';
 const Home = () => {
     // const usersData = useLoaderData();
     // console.log(usersData)
@@ -22,6 +25,10 @@ const Home = () => {
     //     promiseUsers()
     // },[])
 
+    // Axios using data load.
+    const promiseUsers = axios.get("https://jsonplaceholder.typicode.com/users")
+    console.log(promiseUsers);
+
     return (
 
         <div>
@@ -32,11 +39,14 @@ const Home = () => {
 
 
             {/* old way data load */}
-           {/* <Suspense fallback={<h1>Loaddin..</h1>}>
+            {/* <Suspense fallback={<h1>Loaddin..</h1>}>
              <Books promiseData={promiseData}></Books>
            </Suspense> */}
 
-           {/* <Books users={users}></Books> */}
+            {/* <Books users={users}></Books> */}
+           <Suspense>
+             <Books promiseUsers={promiseUsers}></Books>
+           </Suspense>
         </div>
     );
 };
