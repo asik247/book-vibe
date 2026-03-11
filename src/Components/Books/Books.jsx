@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Books = () => {
+const Books = ({user}) => {
+    console.log(user);
     return (
         <div>
             <h1>All Booksssssssssss</h1>
