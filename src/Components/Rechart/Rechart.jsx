@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import MyBarChart from './MyBarChart';
 
 const Rechart = () => {
     const studentData = useLoaderData();
@@ -7,9 +8,7 @@ const Rechart = () => {
     return (
         <div>
             {
-                studentData.map(student=>{
-                    console.log(student);
-                })
+                studentData.map(student=><MyBarChart key={student.id} student={student}></MyBarChart>)
             }
         </div>
     );
