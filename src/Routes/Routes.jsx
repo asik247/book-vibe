@@ -5,6 +5,7 @@ import Books from "../Components/Books/Books";
 import DetailsPage from "../Components/DetailsPage/DetailsPage";
 import WishListBooks from "../Components/WishListBooks/WishListBooks";
 import ReadList from "../Components/ReadList/ReadList";
+import HookFT from "../Components/HooksForm/HookFT";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
                 path: "readList",
                 loader: () => fetch('/promise.json'),
                 Component: ReadList
+            },
+            {
+                path:"hook",
+                Component:HookFT
             }
         ]
 
