@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState } from "react"
 
-const [values,setValues] = useState('');
-
-const handler = ()=>{
-    
+const useMyHook = (defaultValue) =>{
+    const [value,setValue] = useState(defaultValue);
+    const handeOnChange =(e)=>{
+        setValue(e.target.value);
+    }
+    return[value,handeOnChange]
 }
-
-export default {values,handler}
+export default useMyHook
