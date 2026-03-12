@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "name": "Rahim",
+    "class": "10",
+    "section": "A",
+    "subjects": {
+      "Physics": {
+        "theory": 45,
+        "practical": 40,
+        "total": 85,
+        "status": "Pass"
+      },
+      "Chemistry": {
+        "theory": 38,
+        "practical": 40,
+        "total": 78,
+        "status": "Pass"
+      },
+      "Math": {
+        "theory": 50,
+        "practical": 42,
+        "total": 92,
+        "status": "Pass"
+      },
+      "Biology": {
+        "theory": 46,
+        "practical": 42,
+        "total": 88,
+        "status": "Pass"
+      }
+    },
+    "extraCurricular": {
+      "Sports": 10,
+      "Art": 8
+    },
+    "overall": {
+      "totalMarks": 363,
+      "percentage": 90.75
+    }
+  },
+
+
+
+
+  
+  {
+    "id": 2,
+    "name": "Karim",
+    "class": "10",
+    "section": "B",
+    "subjects": {
+      "Physics": {
+        "theory": 35,
+        "practical": 40,
+        "total": 75,
+        "status": "Pass"
+      },
+      "Chemistry": {
+        "theory": 48,
+        "practical": 40,
+        "total": 88,
+        "status": "Pass"
+      },
+      "Math": {
+        "theory": 40,
+        "practical": 41,
+        "total": 81,
+        "status": "Pass"
+      },
+      "Biology": {
+        "theory": 39,
+        "practical": 40,
+        "total": 79,
+        "status": "Pass"
+      }
+    },
+    "extraCurricular": {
+      "Sports": 12,
+      "Art": 7
+    },
+    "overall": {
+      "totalMarks": 323,
+      "percentage": 80.75
+    }
+  },
+  {
+    "id": 3,
+    "name": "Salma",
+    "class": "9",
+    "section": "A",
+    "subjects": {
+      "Physics": {
+        "theory": 50,
+        "practical": 40,
+        "total": 90,
+        "status": "Pass"
+      },
+      "Chemistry": {
+        "theory": 50,
+        "practical": 42,
+        "total": 92,
+        "status": "Pass"
+      },
+      "Math": {
+        "theory": 48,
+        "practical": 41,
+        "total": 89,
+        "status": "Pass"
+      },
+      "English": {
+        "theory": 48,
+        "practical": 46,
+        "total": 94,
+        "status": "Pass"
+      }
+    },
+    "extraCurricular": {
+      "Debate": 9,
+      "Music": 10
+    },
+    "overall": {
+      "totalMarks": 365,
+      "percentage": 91.25
+    }
+  }
+]

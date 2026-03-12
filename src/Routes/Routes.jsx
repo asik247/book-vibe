@@ -6,6 +6,7 @@ import DetailsPage from "../Components/DetailsPage/DetailsPage";
 import WishListBooks from "../Components/WishListBooks/WishListBooks";
 import ReadList from "../Components/ReadList/ReadList";
 import HookFT from "../Components/HooksForm/HookFT";
+import Rechart from "../Components/Rechart/Rechart";
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
             {
                 path:"hook",
                 Component:HookFT
+            },
+            {
+                path:'rechart',
+                loader:()=>fetch('/student.json'),
+                Component:Rechart
             }
         ]
 

@@ -14,6 +14,7 @@ const Navbar = () => {
             <NavLink to="/wishListBooks" className={navLinkStyle}>WishList Books</NavLink>
             <NavLink to="/readList" className={navLinkStyle}>Read List</NavLink>
             <NavLink to="/hook" className={navLinkStyle}>HookForm</NavLink>
+            <NavLink to="/rechart" className={navLinkStyle}>Rechart</NavLink>
         </>
     );
 
